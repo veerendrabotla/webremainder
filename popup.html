@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Set Reminder</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        input, button { display: block; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h2>Set Reminder</h2>
+    <form id="reminder-form">
+        <label for="url">URL:</label>
+        <input type="text" id="url" readonly>
+
+        <label for="title">Title:</label>
+        <input type="text" id="title">
+
+        <label for="note">Note:</label>
+        <input type="text" id="note">
+
+        <label for="datetime">Reminder Date & Time:</label>
+        <input type="datetime-local" id="datetime">
+
+        <button type="submit">Set Reminder</button>
+    </form>
+
+    <script src="popup.js"></script>
+</body>
+</html>
