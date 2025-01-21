@@ -39,4 +39,9 @@ document.addEventListener("DOMContentLoaded", () => {
     chrome.alarms.create(reminderId, { delayInMinutes });
     alert("Reminder set successfully!");
   });
+
+  // Manage Reminders Button click event
+  document.getElementById("manage-reminders").addEventListener("click", () => {
+    chrome.tabs.create({ url: "dashboard.html" }); // Open the reminders dashboard in a new tab
+  });
 });
