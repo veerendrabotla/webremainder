@@ -1,44 +1,62 @@
 
-# Web Reminder Chrome Extension
+# Reminders Chrome Extension
 
-## Overview
-The **Web Reminder Chrome Extension** is a productivity tool designed to help users set reminders for specific web pages. 
-Users can add titles, notes, and select precise dates and times for reminders, ensuring they never miss revisiting an important site.
+This is a Chrome extension that allows users to set reminders for different websites they visit and view/manage those reminders through a dashboard.
 
 ## Features
-- **Set Reminders:** Schedule reminders with titles, notes, and the associated URL.
-- **Custom Time Selection:** Choose specific dates and times for reminders.
-- **Notifications:** Receive notifications with options to open the site or reschedule the reminder.
-- **Reschedule Option:** Modify reminders directly from the notification popup.
 
-## Installation
-1. Clone or download this repository.
-2. Open Chrome and navigate to `chrome://extensions/`.
-3. Enable "Developer mode" in the top-right corner.
-4. Click on "Load unpacked" and select the project folder.
-5. The extension will appear in your browser's toolbar.
+- **Set Reminders**: 
+  - Users can set reminders for specific URLs with titles, notes, and future date/time.
+  - Once the time is reached, an alert will appear as a reminder.
+  
+- **View and Delete Reminders**: 
+  - View the reminders you've set for specific URLs in the dashboard.
+  - Remove any unwanted reminders easily.
 
-## How to Use
-1. Click on the extension icon to open the popup.
-2. The current tab's URL is automatically filled in.
-3. Enter a title, optional note, and select the reminder date and time.
-4. Click **Set Reminder** to schedule it.
-5. When the reminder time is reached, a notification will appear.
+## Folder Structure
 
-## File Structure
-- `popup.html` - The user interface for setting reminders.
-- `popup.js` - Handles user input and interactions.
-- `background.js` - Manages alarms, notifications, and storage.
-- `reschedule.html` - Provides a UI for rescheduling reminders.
-- `reschedule.js` - Handles rescheduling logic.
+```
+- manifest.json              // Manifest file for Chrome extension
+- popup.html                 // Popup UI to set reminders
+- popup.js                   // JavaScript logic for popup page
+- dashboard.html             // Dashboard UI to view and manage reminders
+- dashboard.js               // JavaScript logic for managing reminders in the dashboard
+- background.js              // Background script for persistent alarms handling
+- icons/                     // Icons for extension UI (e.g., icon.png)
+- readme.md                  // Project README file
+```
 
-## Contribution
-Contributions are welcome! Please follow these steps:
-1. Fork the repository.
-2. Create a new branch: `git checkout -b feature-name`.
-3. Commit your changes: `git commit -m 'Add new feature'`.
-4. Push to the branch: `git push origin feature-name`.
-5. Open a pull request.
+## Setup Instructions
+
+1. Clone or download the extension files.
+2. Open Chrome and go to `chrome://extensions`.
+3. Enable "Developer mode" at the top right.
+4. Click on "Load unpacked" and select the folder where your extension files are saved.
+5. The extension will now be active and you can click on the extension's icon in the top-right corner to set a reminder.
+
+## How it Works
+
+### Setting a Reminder:
+- When you click on the extension icon, a popup appears where you can:
+  - Enter the **URL** (auto-filled from the active tab).
+  - Provide a **title**, **note**, and select the **reminder date & time**.
+- When the user submits the form, the reminder is saved in the Chrome `localStorage`.
+
+### Reminder Dashboard:
+- You can open the **Manage Reminders** tab from the popup to view all your set reminders.
+- Each reminder will display:
+  - **Title**
+  - **Note**
+  - **Reminder Date & Time**
+- There is an option to delete any reminders.
+
+### Notifications:
+- Once the scheduled time for a reminder arrives, a Chrome notification is triggered.
 
 ## License
-This project is licensed under the MIT License. See the LICENSE file for details.
+
+MIT License
+
+## Author
+
+Botla Veerendra
